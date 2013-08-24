@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>App Inventor 2 -- Contributing through github</title>
-    <meta name="description" content="Contributing to App Inventor 2">
+    <title>App Inventor 2 -- Development Workflow</title>
+    <meta name="description" content="Development Workflow">
     <meta name="author" content="Jose Dominguez">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -30,7 +30,7 @@
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
         <section>
-        <h1>Contributing through github</h1>
+        <h1>Development Workflow</h1>
         <h3>App Inventor 2</h3>
         <p>
         <small>Created by <a href="http://hakim.se">Jose Dominguez</a> / <a
@@ -42,23 +42,11 @@
         </section>
 
         <section>
-        <h2>Not familiar with github?</h2>
+        <h2>Contributing through github?</h2>
         <p>
-          <a href="http://try.github.com"> try.github.com </a>
-        </p>
-
-        <aside class="notes">
-          go to the site now.
-        </aside>
-        </section>
-
-        <section>
-        <h2>Fork the Repo</h2>
-        <p>
-          <img src="https://dl.dropboxusercontent.com/u/40369965/ai2_slides_images/ForkRepo.png"/>
-          <a href="https://github.com/mit-cml/appinventor-sources">
-            https://github.com/mit-cml/appinventor-sources
-          </a>
+          Make sure you have read
+          <a href="http://josmas.github.io/contributingToAppInventor2/#/">
+            Contributing through github  </a>
         </p>
 
         <aside class="notes">
@@ -67,28 +55,50 @@
         </section>
 
         <section>
-        <h2>clone locally</h2>
+        <h2>Make a feature branch</h2>
         <p>
           <pre><code data-trim>
-          git clone https://github.com/YOUR_USER_NAME/appinventor-sources.git
+            git checkout -b bugfix34 
           </code></pre>
-          # Clones your fork of the repository into the current directory in terminal
+          creates a new branch and checks it out automatically
         </p>
 
         <aside class="notes">
-          <p> swap YOUR_USER_NAME for your real user name </p>
+          no notes for now
         </aside>
         </section>
 
         <section>
-        <h2>configure remotes</h2>
+        <h2>File changes</h2>
         <p>
-          <pre><code data-trim>
-            $ cd appinventor-sources
-          </code></pre>
-          <pre><code data-trim>
-            $ git remote add upstream https://github.com/mit-cml/appinventor-sources.git
-          </code></pre>
+          <pre>
+            <code data-trim>
+              git add buttonStyle.css 
+            </code>
+            <code data-trim>
+              git commit -m 'adds new button stlyle: #34' 
+            </code>
+            <code data-trim>
+              git push origin bugfix34 
+            </code>
+          </pre>
+          make any changes you need, add, commit, and push to your repo as a
+          remote branch 
+        </p>
+
+        <aside class="notes">
+          no notes for now
+        </aside>
+        </section>
+
+        <section>
+        <h2>Open a Pull Request</h2>
+        <p>
+          <img
+          src="https://dl.dropboxusercontent.com/u/40369965/ai2_slides_images/PR_1.png"/>
+        </p>
+        <p>
+          Click on 'Compare & pull request'
         </p>
 
         <aside class="notes">
@@ -97,61 +107,15 @@
         </section>
 
         <section>
-        <h2>.gitignore</h2>
-        <p>
-          <pre><code data-trim>
-            $ cp sample-.gitignore .gitignore
-          </code></pre>
-        </p>
-
-        <aside class="notes">
-          If you don't do this, you will get in all kinds of trouble
-        </aside>
-        </section>
-        <section>
-        <h2>checkout newblocks</h2>
+        <h2>Submit Pull Request</h2>
         <p>
           <img
-          src="https://dl.dropboxusercontent.com/u/40369965/ai2_slides_images/checkout_newblocks.png"
-          width="500" height="370"/>
+          src="https://dl.dropboxusercontent.com/u/40369965/ai2_slides_images/PR_2.png"/>
         </p>
-        <pre><code data-trim>
-        git fetch origin
-        </code></pre>
-        <pre><code data-trim>
-        git checkout -b newblocks origin/newblocks
-        </code></pre>
-
-        <aside class="notes">
-          no notes for now
-        </aside>
-        </section>
-
-        <section>
-        <h2>build app inventor 2</h2>
         <p>
-          <pre><code data-trim>
-            $ cd appinventor
-          </code></pre>
-          <pre><code data-trim>
-            $ ant 
-          </code></pre>
-        </p>
-
-        <aside class="notes">
-          no notes for now
-        </aside>
-        </section>
-
-        <section>
-        <h2>run app inventor 2</h2>
-        <p>
-          <pre><code data-trim>
-            $ your-appengine-SDK-folder/bin/dev_appserver.sh 
-            --port=8888 --address=0.0.0.0 appengine/build/war/
-          </code></pre>
-          Note that these routes are relatives to the path of your AppEngine
-          installation
+        Make sure all changes are corrent and click on 'Send pull request'.
+        Especially make sure that the origin is your new branch and the
+        destination is mit-cml:newblocks. If that is not the case, click on 'edit'
         </p>
 
         <aside class="notes">
@@ -162,10 +126,8 @@
         <section>
         <h2>you are now ready to go!</h2>
         <p>
-          Navigate to 
-        <a href="http://localhost:8888">
-          localhost:8888
-        </a> 
+          Your pull request will be reviewed: expect comments and you might have
+          to make changes too!
         </p>
         <p>
         Checkout the
